@@ -17,6 +17,14 @@
 ## Videos / Playlists
 
 
+## Stack
+
+| Component                 | Project / Technology                  |
+| --------------------------|---------------------------------------|
+| Container runtime         | [Docker](https://www.docker.com)      |
+| Container orchestration   | [Kubernetes](https://kubernetes.io)   |
+| Registry                  | [Harbor](https://goharbor.io)         |
+
 ### 🏠 [Homepage](/)
 
 ### ✨ [Demo](/)
