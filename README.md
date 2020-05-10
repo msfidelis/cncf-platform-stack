@@ -24,6 +24,7 @@
 
 | Component                 | Project / Technology                  |
 | --------------------------|---------------------------------------|
+| Automation Tool           | [Ansible](https://www.ansible.com)    |
 | Container runtime         | [Docker](https://www.docker.com)      |
 | Container orchestration   | [Kubernetes](https://kubernetes.io)   |
 | Registry                  | [Harbor](https://goharbor.io)         |
