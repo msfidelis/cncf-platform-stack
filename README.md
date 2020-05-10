@@ -16,7 +16,7 @@
 
 ## Videos / Playlists
 
-* [[CNCF Challenge] Cap. 1 - Intro](https://www.youtube.com/watch?v=pFstphlh5A8&list=PLsyPhquWMjqGk4yowFg-9vvpgwjZH_PBt&index=2&t=0s)
+* [[CNCF Challenge] Cap. 1 - Intro](https://www.youtube.com/watch?v=pFstphlh5A8&list=PLsyPhquWMjqGk4yowFg-9vvpgwjZH_PBt&index=2&t=0s) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap01_intro)
 
 ## Stack
 
