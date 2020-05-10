@@ -35,7 +35,7 @@
 
 ## Referencias
 
-* O Formato deste curso é baseado totalmente na didática  do [curso de Golang]() da Ellen Korbes
+* O Formato deste curso é baseado totalmente na didática  do [curso de Golang](https://www.youtube.com/watch?v=WiGU_ZB-u0w&list=PLCKpcjBB_VlBsxJ9IseNxFllf-UFEXOdg) da Ellen Körbes
 
 * [Home da CNCF](https://www.cncf.io)
 * [Projetos da CNCF](https://www.cncf.io/projects)
