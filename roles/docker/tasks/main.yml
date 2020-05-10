@@ -1,0 +1,30 @@
+- pip:
+    name:
+      - docker
+
+- name: Remove swap file
+  mount:
+    name: swap
+    fstype: swap
+    state: absent
+
+- name: Disable Swap
+  command: swapoff -a
+
+- name: Installing Docker
+  apt: 
+    name: "{{ packages }}"
+    update_cache: false
+    state: present
+  vars:
+    packages:
+      - docker.io
+      - docker-compose
+
+- name: Reload configs
+  systemd: daemon_reload=yes
+
+- name: Enable Docker Service
+  systemd:
+    name: docker
+    enabled: yes

@@ -1,0 +1,7 @@
+all:
+  vars:
+    ansible_ssh_user: matheus
+  children:
+    test:
+      hosts:
+        11.111.11.11
