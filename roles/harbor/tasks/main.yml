@@ -1,0 +1,27 @@
+- name: Download harbor package
+  get_url:
+    url: https://storage.googleapis.com/harbor-releases/release-1.8.0/harbor-offline-installer-v1.8.1.tgz
+    dest: /tmp/harbor.tgz
+    mode: '0777'
+
+- name: Extract /tmp/harbor.tgz
+  unarchive: 
+    src: /tmp/harbor.tgz
+    dest: /tmp
+    remote_src: yes
+  args:
+    creates: /tmp/harbor
+
+- name: Put harbor template
+  template:
+    src: harbor.yml.j2
+    dest: /tmp/harbor/harbor.yml
+    owner: root
+    group: root
+    mode: '0777'
+
+- name: Install harbor with clair
+  shell: "/tmp/harbor/install.sh --with-clair"
+  args:
+    chdir: /tmp/
+    creates: harbor-install.log

@@ -1,0 +1,10 @@
+- hosts: harbor
+  gather_facts: False
+  remote_user: matheus
+  become: yes
+  become_user: root
+  roles: 
+    # - { role: commons }
+    # - { role: docker }
+    # - { role: letsencrypt }
+    - { role: harbor }

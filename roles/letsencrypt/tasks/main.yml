@@ -1,0 +1,36 @@
+- name: Add certbot PPA
+  apt_repository:
+    repo: 'ppa:certbot/certbot'
+
+- name: Install Certbot for Nginx
+  apt:
+    name: 'python-certbot-nginx'
+    state: present
+
+- name: check if certificate exists
+  stat:
+    path: /etc/letsencrypt/{{ cert_domain_name }}/cert.pem
+  register: cert_exists
+
+- name: check if service is running on port 80
+  wait_for: 
+    port: 80
+    timeout: 10
+    state: stopped
+    msg: "Port 80 already allocated"
+  register: service_status
+  ignore_errors: yes
+
+- name: debug cert_exists
+  debug:
+    var: cert_exists 
+
+- name: debug service_status
+  debug:
+    var: service_status 
+
+- name: Generate new certificate for {{ cert_domain_name }}
+  shell: "certbot certonly --standalone --noninteractive --agree-tos --email {{ cert_admin_email }} -d {{ cert_domain_name }}"
+  when:
+    - cert_exists.stat.exists == false
+    - service_status.state == "stopped"

@@ -1,7 +1,10 @@
 all:
   vars:
     ansible_ssh_user: matheus
+    harbor_admin: cncfdemo
+    cert_domain_name: registry.cncf.raj.ninja
+    cert_admin_email: test@raj.ninja
   children:
-    test:
+    harbor:
       hosts:
-        11.111.11.11
+        34.71.192.242
