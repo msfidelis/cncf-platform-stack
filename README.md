@@ -16,9 +16,13 @@
 
 ## Videos / Playlists
 
+* [Playlist completa](https://www.youtube.com/playlist?list=PLsyPhquWMjqEBjY0neO8R7qGIRP0Kkwm3)
+
 * [[CNCF Challenge] Cap. 1 - Intro](https://www.youtube.com/watch?v=pFstphlh5A8&list=PLsyPhquWMjqGk4yowFg-9vvpgwjZH_PBt&index=2&t=0s) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap01_intro)
 
 * [[CNCF Challenge] Cap. 2 - Commons](https://www.youtube.com/watch?v=rpHuIlN46zg&list=PLsyPhquWMjqFIP7jcBz52tqJpgRjuxDKo) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap02_commons)
+
+* [[CNCF Challenge] Cap. 3 - Harbor como Registry](https://www.youtube.com/playlist?list=PLsyPhquWMjqEdJHownusV1NMtCycZELEI) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap03_harbor)
 
 ## Stack
 
@@ -39,6 +43,10 @@
 
 * [Home da CNCF](https://www.cncf.io)
 * [Projetos da CNCF](https://www.cncf.io/projects)
+* [Docs do Harbor](https://goharbor.io/docs/1.10/)
+* [Certbot](https://certbot.eff.org/docs/)
+* [Docs Clair](https://github.com/quay/clair/tree/master/Documentation)
+
 
 ## Install
 

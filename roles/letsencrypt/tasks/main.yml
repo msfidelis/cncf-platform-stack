@@ -9,7 +9,7 @@
 
 - name: check if certificate exists
   stat:
-    path: /etc/letsencrypt/{{ cert_domain_name }}/cert.pem
+    path: /etc/letsencrypt/live/{{ cert_domain_name }}/cert.pem
   register: cert_exists
 
 - name: check if service is running on port 80
