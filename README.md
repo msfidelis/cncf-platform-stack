@@ -22,7 +22,7 @@
 
 * [[CNCF Challenge] Cap. 2 - Commons](https://www.youtube.com/watch?v=rpHuIlN46zg&list=PLsyPhquWMjqFIP7jcBz52tqJpgRjuxDKo) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap02_commons)
 
-* [[CNCF Challenge] Cap. 3 - Harbor como Registry](https://www.youtube.com/playlist?list=PLsyPhquWMjqEdJHownusV1NMtCycZELEI) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap03_harbor)
+* [[CNCF Challenge] Cap. 3 - Harbor como Registry](https://www.youtube.com/watch?v=c-1Xw7TcrCs&list=PLsyPhquWMjqEdJHownusV1NMtCycZELEI) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap03_harbor)
 
 ## Stack
 
