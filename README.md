@@ -24,6 +24,10 @@
 
 * [[CNCF Challenge] Cap. 3 - Harbor como Registry](https://www.youtube.com/watch?v=c-1Xw7TcrCs&list=PLsyPhquWMjqEdJHownusV1NMtCycZELEI) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap03_harbor)
 
+* [[CNCF Challenge] Cap. 4 - Kubernetes (Masters e Nodes)](https://) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap04_k8s)
+
+* [[CNCF Challenge] Cap. 5 - Contour Como Ingress Controller](https://) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap05_contour)
+
 ## Stack
 
 | Component                 | Project / Technology                  |
