@@ -5,6 +5,15 @@ all:
     cert_domain_name: registry.cncf.raj.ninja
     cert_admin_email: test@raj.ninja
   children:
+    kubernetes:
+      children: 
+        masters:
+          hosts:
+            35.202.248.178:
+        nodes:
+          hosts:
+            34.70.225.253:
+            104.198.242.49:
     harbor:
       hosts:
         34.71.192.242

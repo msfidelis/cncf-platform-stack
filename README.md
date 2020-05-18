@@ -24,6 +24,8 @@
 
 * [[CNCF Challenge] Cap. 3 - Harbor como Registry](https://www.youtube.com/watch?v=c-1Xw7TcrCs&list=PLsyPhquWMjqEdJHownusV1NMtCycZELEI) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap03_harbor)
 
+* [[CNCF Challenge] Cap. 4 - Kubernetes](https://www.youtube.com/watch?v=p4cUYARKlxA&list=PLsyPhquWMjqGKDaalHH-BAZjkLRT_hDvH) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap04_k8s)
+
 ## Stack
 
 | Component                 | Project / Technology                  |
