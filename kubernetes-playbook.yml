@@ -1,12 +1,12 @@
-# - hosts: kubernetes
-#   gather_facts: true
-#   remote_user: matheus
-#   become: yes
-#   become_user: root
-#   roles:
-#     - { role: commons }
-#     - { role: docker }
-#     - { role: kubernetes }
+- hosts: kubernetes
+  gather_facts: true
+  remote_user: matheus
+  become: yes
+  become_user: root
+  roles:
+    - { role: commons }
+    - { role: docker }
+    - { role: kubernetes }
 
 - hosts: masters
   gather_facts: true
