@@ -4,7 +4,7 @@
   become: yes
   become_user: root
   roles: 
-    # - { role: commons }
-    # - { role: docker }
-    # - { role: letsencrypt }
+    - { role: commons }
+    - { role: docker }
+    - { role: letsencrypt }
     - { role: harbor }
