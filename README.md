@@ -26,6 +26,9 @@
 
 * [[CNCF Challenge] Cap. 4 - Kubernetes](https://www.youtube.com/watch?v=p4cUYARKlxA&list=PLsyPhquWMjqGKDaalHH-BAZjkLRT_hDvH) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap04_k8s)
 
+* [[CNCF Challenge] Cap. 5 - Contour Como Ingress Controller](https://) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap05_contour)
+
+
 ## Stack
 
 | Component                 | Project / Technology                  |

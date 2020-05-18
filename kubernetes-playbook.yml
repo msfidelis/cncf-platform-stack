@@ -15,6 +15,7 @@
   become_user: root
   roles:
     - { role: masters }
+    - { role: contour }
 
 - hosts: nodes
   gather_facts: true
