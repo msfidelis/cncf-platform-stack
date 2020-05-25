@@ -2,6 +2,7 @@
   gather_facts: true
   remote_user: matheus
   become: yes
+  strategy: free
   become_user: root
   roles:
     - { role: commons }
@@ -13,14 +14,17 @@
   remote_user: matheus
   become: yes
   become_user: root
+  strategy: free
   roles:
     - { role: masters }
     - { role: contour }
+    - { role: linkerd }
 
 - hosts: nodes
   gather_facts: true
   remote_user: matheus
   become: yes
   become_user: root
+  strategy: free
   roles:
     - { role: nodes }

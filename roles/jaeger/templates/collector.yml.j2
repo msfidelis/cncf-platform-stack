@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: tracing
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: oc-collector-conf
+  namespace: tracing
+  labels:
+    app: opencensus
+    component: oc-collector-conf
+data:
+  oc-collector-config: |
+    receivers:
+      opencensus:
+        port: 55678
+      zipkin:
+        port: 9411
+    queued-exporters:
+      jaeger-all-in-one:
+        num-workers: 4
+        queue-size: 100
+        retry-on-failure: true
+        sender-type: jaeger-thrift-http
+        jaeger-thrift-http:
+          collector-endpoint: http://jaeger.tracing:14268/api/traces
+          timeout: 5s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: oc-collector
+  namespace: tracing
+  labels:
+    app: opencesus
+    component: oc-collector
+spec:
+  ports:
+  - name: opencensus
+    port: 55678
+    protocol: TCP
+    targetPort: 55678
+  - name: zipkin
+    port: 9411
+    protocol: TCP
+    targetPort: 9411
+  selector:
+    component: oc-collector
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: oc-collector
+  namespace: tracing
+  labels:
+    app: opencensus
+    component: oc-collector
+spec:
+  selector:
+    matchLabels:
+      app: opencensus
+      component: oc-collector
+  replicas: 1
+  template:
+    metadata:
+      annotations:
+        linkerd.io/inject: enabled
+      labels:
+        app: opencensus
+        component: oc-collector
+    spec:
+      containers:
+      - command:
+        - "/occollector_linux"
+        - "--config=/conf/oc-collector-config.yaml"
+        env:
+        - name: GOGC
+          value: "80"
+        image: omnition/opencensus-collector:0.1.11
+        name: oc-collector
+        ports:
+        - containerPort: 55678
+        - containerPort: 9411
+        volumeMounts:
+        - name: oc-collector-config-vol
+          mountPath: /conf
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 13133
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 13133
+      volumes:
+      - configMap:
+          name: oc-collector-conf
+          items:
+          - key: oc-collector-config
+            path: oc-collector-config.yaml
+        name: oc-collector-config-vol

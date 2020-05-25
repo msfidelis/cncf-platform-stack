@@ -1,0 +1,10 @@
+- name: Put dashboard template
+  template:
+    src: dashboard.yml.j2
+    dest: /tmp/jaeger-dashboard.yml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: Apply dashboard
+  shell: kubectl apply -f /tmp/jaeger-dashboard.yml

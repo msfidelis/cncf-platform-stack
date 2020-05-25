@@ -1,0 +1,28 @@
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: web-ingress-auth
+  namespace: linkerd
+data:
+  auth: YWRtaW46JGFwcjEkbjdDdTZnSGwkRTQ3b2dmN0NPOE5SWWpFakJPa1dNLgoK
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: web-ingress
+  namespace: linkerd
+  annotations:
+    ingress.kubernetes.io/custom-request-headers: l5d-dst-override:linkerd-web.linkerd.svc.cluster.local:8084
+    projectcontour.io/websocket-routes: /api/tap
+    contour.heptio.com/websocket-routes: /api/tap
+spec:
+  rules:
+  - host: {{ linkerd_hostname }}
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: linkerd-web
+          servicePort: 8084

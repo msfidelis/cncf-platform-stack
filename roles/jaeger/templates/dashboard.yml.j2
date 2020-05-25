@@ -1,0 +1,17 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: jaeger-web
+  namespace: tracing
+  annotations:
+    ingress.kubernetes.io/custom-request-headers: l5d-dst-override:linkerd-web.linkerd.svc.cluster.local:8084
+spec:
+  rules:
+  - host: jaeger.raj.ninja
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: jaeger
+          servicePort: 16686

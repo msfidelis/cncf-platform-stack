@@ -8,12 +8,19 @@ all:
     kubernetes:
       children: 
         masters:
+          vars:
+            linkerd_hostname: linkerd.raj.ninja
           hosts:
-            35.202.248.178:
+            34.70.47.219:
         nodes:
           hosts:
-            34.70.225.253:
-            104.198.242.49:
+            35.193.222.129:
+            35.232.184.228:
+            35.223.151.159: 
     harbor:
       hosts:
         34.71.192.242
+
+    front-proxy:
+      hosts:
+        34.70.45.206:

@@ -1,0 +1,31 @@
+- name: Download Linkerd Installation
+  get_url:
+    url: https://run.linkerd.io/install
+    dest: /tmp/linkerd.sh
+    mode: '0777'
+
+- name: Install Linkerd CLI
+  shell: sh /tmp/linkerd.sh > linkerd_cli_install.log
+  args:
+    chdir: $HOME
+    creates: linkerd_cli_install.log
+
+- name: linkerd cli symlink
+  file:
+    src: $HOME/.linkerd2/bin/linkerd
+    dest: /usr/local/bin/linkerd
+    owner: root
+    group: root
+    mode: "0777"
+    state: link
+
+- name: Put Linkerd template
+  template:
+    src: linkerd.yml.j2
+    dest: /tmp/linkerd.yml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: Apply linkerd
+  shell: kubectl apply -f /tmp/linkerd.yml

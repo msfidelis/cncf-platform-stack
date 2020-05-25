@@ -1,0 +1,72 @@
+- name: install required packages from envoy
+  apt:
+    name: "{{ packages }}"
+    update_cache: true
+    state: present
+  vars:
+    packages:
+      - apt-transport-https
+      - ca-certificates  
+      - gnupg-agent
+      - software-properties-common
+
+
+- name: Get Envoy apt-key
+  apt_key: 
+    url: https://getenvoy.io/gpg
+    state: present
+
+- name: Add Envoy repo
+  apt_repository:
+    repo: deb [arch=amd64] https://dl.bintray.com/tetrate/getenvoy-deb bionic stable
+    state: present
+    filename: envoy
+
+- name: Install envoy cli
+  apt:
+    name: "{{ packages }}"
+    update_cache: true
+    state: present
+  vars:
+    packages:
+      - getenvoy-envoy
+
+- name: Create envoy directory
+  file: 
+    path: /etc/envoy
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+
+- name: Put envoy template
+  template:
+    src: envoy.yaml.j2
+    dest: /etc/envoy/envoy.yaml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: Create envoy service file
+  template:
+    src: envoy.service.j2
+    dest: /etc/systemd/system/envoy.service
+    owner: root
+    group: root
+    mode: 0777
+
+- name: Enable envoy service
+  systemd:
+    name: envoy
+    enabled: yes
+
+- name: Restart envoy
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: envoy
+
+- name: Make sure a envoy is running
+  systemd:
+    state: started
+    name: envoy

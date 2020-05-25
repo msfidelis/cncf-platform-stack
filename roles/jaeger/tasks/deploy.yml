@@ -1,0 +1,21 @@
+- name: Put collector template
+  template:
+    src: collector.yml.j2
+    dest: /tmp/collector.yml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: Apply collector
+  shell: kubectl apply -f /tmp/collector.yml
+
+- name: Put jaeger template
+  template:
+    src: jaeger.yml.j2
+    dest: /tmp/jaeger.yml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: Apply linkerd
+  shell: kubectl apply -f /tmp/jaeger.yml
