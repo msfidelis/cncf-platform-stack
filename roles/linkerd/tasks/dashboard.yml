@@ -1,0 +1,8 @@
+- name: Put linkerd dashboard template
+  template: 
+    src: dashboard.yml.j2
+    dest: /tmp/linkerd-dashboard.yml
+    mode: 0777
+
+- name: Deploy linkerd dashboard
+  shell: 'kubectl apply -f /tmp/linkerd-dashboard.yml'
