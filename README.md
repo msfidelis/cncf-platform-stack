@@ -28,6 +28,7 @@
 
 * [[CNCF Challenge] Cap. 5 - Contour Como Ingress Controller](https://www.youtube.com/playlist?list=PLsyPhquWMjqGN8d-ETwiw28p0xFfy9vJC) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap05_contour)
 
+* [[CNCF Challenge] Cap. 6 - Service Mesh com Linkerd](https://www.youtube.com/playlist?list=PLsyPhquWMjqGe0E8SiWh3Rv_B0lxwmL2O) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap06_linkerd)
 
 ## Stack
 
@@ -37,6 +38,8 @@
 | Container runtime         | [Docker](https://www.docker.com)      |
 | Container orchestration   | [Kubernetes](https://kubernetes.io)   |
 | Registry                  | [Harbor](https://goharbor.io)         |
+| Ingress Controller        | [Contour](https://projectcontour.io)  |
+| Service Mesh              | [Linkerd](https://linkerd.io)         |
 
 ### 🏠 [Homepage](/)
 
@@ -52,6 +55,10 @@
 * [Certbot](https://certbot.eff.org/docs/)
 * [Docs Clair](https://github.com/quay/clair/tree/master/Documentation)
 
+## Microserviços utilizados na aula pra testes 
+
+* [Whois Microservice](https://github.com/msfidelis/microservice-nadave-whois)
+* [Faker Person Generator Microservice](https://github.com/msfidelis/microservice-nadave-fake-person)
 
 ## Install
 

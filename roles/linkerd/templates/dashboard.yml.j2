@@ -1,0 +1,18 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: linkerd-web
+  namespace: linkerd
+spec:
+  virtualhost:
+    fqdn: {{ linkerd_url }}
+  routes:
+    - services:
+        - name: linkerd-web
+          port: 8084
+    - conditions:
+      - prefix: /api/tap
+      enableWebsockets: true 
+      services:
+        - name: linkerd-web
+          port: 8084

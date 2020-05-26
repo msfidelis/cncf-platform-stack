@@ -16,6 +16,7 @@
   roles:
     - { role: masters }
     - { role: contour }
+    - { role: linkerd }
 
 - hosts: nodes
   gather_facts: true
