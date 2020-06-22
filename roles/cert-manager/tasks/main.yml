@@ -1,0 +1,26 @@
+- name: Put cert-manager template
+  template:
+    src: cert-manager.yml.j2
+    dest: /tmp/cert-manager.yml
+    mode: 0777
+
+- name: cert-manager apply
+  shell: 'kubectl apply -f /tmp/cert-manager.yml'
+
+- name: Put issuer-stg template
+  template:
+    src: issuer-stg.yml.j2
+    dest: /tmp/issuer-stg.yml
+    mode: 0777
+
+- name: issuer-stg apply
+  shell: 'kubectl apply -f /tmp/issuer-stg.yml'
+
+- name: Put issuer-prd template
+  template:
+    src: issuer-prd.yml.j2
+    dest: /tmp/issuer-prd.yml
+    mode: 0777
+
+- name: issuer-prd apply
+  shell: 'kubectl apply -f /tmp/issuer-prd.yml'

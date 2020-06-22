@@ -3,7 +3,7 @@ all:
     ansible_ssh_user: matheus
     harbor_admin: cncfdemo
     cert_domain_name: registry.cncf.raj.ninja
-    cert_admin_email: test@raj.ninja
+    cert_admin_email: matheus@nanoshots.com.br
   children:
     kubernetes:
       children: 
@@ -11,12 +11,12 @@ all:
           vars:
             linkerd_url: linkerd.raj.ninja
           hosts:
-            35.239.237.150:
+            35.202.27.73:
         nodes:
           hosts:
-            35.225.29.206:
-            35.223.59.192:
-            35.223.152.219:
+            35.193.116.43:
+            34.72.190.40:
+            104.198.248.226:
     harbor:
       hosts:
         34.71.192.242
