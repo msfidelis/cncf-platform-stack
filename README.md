@@ -30,6 +30,9 @@
 
 * [[CNCF Challenge] Cap. 6 - Service Mesh com Linkerd](https://www.youtube.com/playlist?list=PLsyPhquWMjqGe0E8SiWh3Rv_B0lxwmL2O) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap06_linkerd)
 
+* [[CNCF Challenge] Cap. 7 - Cert-Manager no Kubernetes](https://www.youtube.com/playlist?list=PLsyPhquWMjqFlrDXS0_DUsUntOb0BADrh) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap07_cert_manager)
+
+
 ## Stack
 
 | Component                 | Project / Technology                  |
