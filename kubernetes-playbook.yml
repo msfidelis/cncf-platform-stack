@@ -25,3 +25,11 @@
   become_user: root
   roles:
     - { role: nodes }
+
+- hosts: masters
+  gather_facts: true
+  remote_user: matheus
+  become: yes
+  become_user: root
+  roles:
+    - { role: cert-manager }
