@@ -1,0 +1,8 @@
+- hosts: front-proxy
+  gather_facts: False
+  remote_user: matheus
+  become: yes
+  become_user: root
+  roles: 
+    - { role: commons }
+    - { role: front-proxy }
