@@ -1,0 +1,66 @@
+- name: "Install envoy proxy requirements"
+  apt:
+    name: "{{ packages }}"
+    update_cache: yes
+    state: present
+  vars:
+    packages:
+      - apt-transport-https
+      - ca-certificates
+      - gnupg-agent
+      - software-properties-common
+
+- name: "Get envoy apt key"
+  apt_key:
+    url: https://getenvoy.io/gpg
+    state: present
+
+- name: "Add Envoy repo"
+  apt_repository:
+    repo: deb [arch=amd64] https://dl.bintray.com/tetrate/getenvoy-deb bionic stable
+    state: present
+    filename: envoy
+
+- name: "Install envoy CLI"
+  apt:
+    name: "{{ packages }}"
+    state: present
+    update_cache: yes
+  vars:
+    packages:
+      - getenvoy-envoy
+
+- name: "Create envoy directory"
+  file:
+    path: /etc/envoy/
+    state: directory
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: "Put envoy template"
+  template: 
+    src:  envoy.yaml.j2
+    dest: /etc/envoy/envoy.yaml
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: "Create envoy service file"
+  template: 
+    src: envoy.system.j2
+    dest: /etc/systemd/system/envoy.service
+    owner: root
+    group: root
+    mode: "0777"
+
+- name: "Enable envoy service"
+  systemd:
+    name: envoy
+    enabled: yes
+
+- name: "Restart envoy proxy"
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: envoy

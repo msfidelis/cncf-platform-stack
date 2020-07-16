@@ -1,0 +1,70 @@
+static_resources:
+  listeners:
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 80
+
+    # TCP Filter
+    filter_chains:
+    - filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_tcp
+          cluster: k8s_cluster_http
+          access_log:
+            - name: envoy.file_access_log
+              config:
+                path: /dev/null
+
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+
+    # TCP Filter
+    filter_chains:
+    - filters:
+      - name: envoy.tcp_proxy
+        config:
+          stat_prefix: ingress_tcp
+          cluster: k8s_cluster_https
+          access_log:
+            - name: envoy.file_access_log
+              config:
+                path: /dev/null
+
+  clusters:
+    - name: "k8s_cluster_http"
+      connect_timeout: "30s"
+      type: "strict_dns"
+      lb_policy: "LEAST_REQUEST"
+      # lb_policy: "ROUND_ROBIN"
+      # lb_policy: "RING_HASH"
+      # lb_policy: "MAGLEV"
+      hosts:
+
+    {% for host in groups['nodes'] %}
+
+      - socket_address:
+          address: {{ host }}
+          port_value: 80
+
+    {% endfor %}
+
+    - name: "k8s_cluster_https"
+      connect_timeout: "30s"
+      type: "strict_dns"
+      lb_policy: "LEAST_REQUEST"
+      # lb_policy: "ROUND_ROBIN"
+      # lb_policy: "RING_HASH"
+      # lb_policy: "MAGLEV"
+      hosts:
+
+    {% for host in groups['nodes'] %}
+
+      - socket_address:
+          address: {{ host }}
+          port_value: 443
+
+    {% endfor %}

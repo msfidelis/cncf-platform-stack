@@ -12,7 +12,11 @@
   </a>
 </p>
 
-> Application Platform using only CNCF Stack 
+> Application Platform using only CNCF Stack
+
+## Architecture
+
+![dap](.github/assets/img/dap.png)
 
 ## Videos / Playlists
 
@@ -32,17 +36,20 @@
 
 * [[CNCF Challenge] Cap. 7 - Cert-Manager no Kubernetes](https://www.youtube.com/playlist?list=PLsyPhquWMjqFlrDXS0_DUsUntOb0BADrh) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap07_cert_manager)
 
+* [[CNCF Challenge] Cap. 8 - Front Proxy com Envoy](https://www.youtube.com/playlist?list=PLsyPhquWMjqE7g-cebsM0vfOQaF9CJJx_) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap08_front_proxy)
 
 ## Stack
 
-| Component                 | Project / Technology                  |
-| --------------------------|---------------------------------------|
-| Automation Tool           | [Ansible](https://www.ansible.com)    |
-| Container runtime         | [Docker](https://www.docker.com)      |
-| Container orchestration   | [Kubernetes](https://kubernetes.io)   |
-| Registry                  | [Harbor](https://goharbor.io)         |
-| Ingress Controller        | [Contour](https://projectcontour.io)  |
-| Service Mesh              | [Linkerd](https://linkerd.io)         |
+| Component                 | Project / Technology                      |
+| --------------------------|-------------------------------------------|
+| Automation Tool           | [Ansible](https://www.ansible.com)        |
+| Container runtime         | [Docker](https://www.docker.com)          |
+| Container orchestration   | [Kubernetes](https://kubernetes.io)       |
+| Registry                  | [Harbor](https://goharbor.io)             |
+| Ingress Controller        | [Contour](https://projectcontour.io)      |
+| Service Mesh              | [Linkerd](https://linkerd.io)             |
+| HTTPS Certs Manager       | [cert-manager](https://cert-manager.io/)  |
+| Front Proxy               | [Envoy Proxy](https://www.envoyproxy.io)  |
 
 ### 🏠 [Homepage](/)
 
@@ -57,11 +64,14 @@
 * [Docs do Harbor](https://goharbor.io/docs/1.10/)
 * [Certbot](https://certbot.eff.org/docs/)
 * [Docs Clair](https://github.com/quay/clair/tree/master/Documentation)
+* [Algoritmos de Load Balancing do Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers)
+* [Repositório com exemplos de uso do Envoy](https://github.com/msfidelis/envoy-proxy-examples) 
 
-## Microserviços utilizados na aula pra testes 
+## Microserviços utilizados na aula pra testes
 
 * [Whois Microservice](https://github.com/msfidelis/microservice-nadave-whois)
 * [Faker Person Generator Microservice](https://github.com/msfidelis/microservice-nadave-fake-person)
+* [Chip](https://github.com/msfidelis/chip)
 
 ## Install
 
@@ -71,8 +81,22 @@ git clone $
 
 ## Usage
 
+### Harbor Setup 
+
 ```sh
-ansible-playbook -i 
+ansible-playbook -i harbor-playbook.yml
+```
+
+### Kubernetes Setup
+
+```sh
+ansible-playbook -i kubernetes-playbook.yml
+```
+
+### Front Proxy Setup
+
+```sh
+ansible-playbook -i front-proxy-playbook.yml
 ```
 
 ## Author
