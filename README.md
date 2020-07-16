@@ -14,6 +14,10 @@
 
 > Application Platform using only CNCF Stack 
 
+## Architecture
+
+![dap](.github/assets/img/dap.png)
+
 ## Videos / Playlists
 
 * [Playlist completa](https://www.youtube.com/playlist?list=PLsyPhquWMjqEBjY0neO8R7qGIRP0Kkwm3)
@@ -32,6 +36,7 @@
 
 * [[CNCF Challenge] Cap. 7 - Cert-Manager no Kubernetes](https://www.youtube.com/playlist?list=PLsyPhquWMjqFlrDXS0_DUsUntOb0BADrh) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap07_cert_manager)
 
+* [[CNCF Challenge] Cap. 8 - Front Proxy com Envoy](https://www.youtube.com) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap08_front_proxy)
 
 ## Stack
 
