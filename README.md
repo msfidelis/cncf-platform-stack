@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> Application Platform using only CNCF Stack 
+> Application Platform using only CNCF Stack
 
 ## Architecture
 
@@ -36,7 +36,7 @@
 
 * [[CNCF Challenge] Cap. 7 - Cert-Manager no Kubernetes](https://www.youtube.com/playlist?list=PLsyPhquWMjqFlrDXS0_DUsUntOb0BADrh) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap07_cert_manager)
 
-* [[CNCF Challenge] Cap. 8 - Front Proxy com Envoy](https://www.youtube.com) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap08_front_proxy)
+* [[CNCF Challenge] Cap. 8 - Front Proxy com Envoy](https://www.youtube.com/playlist?list=PLsyPhquWMjqE7g-cebsM0vfOQaF9CJJx_) - [Exemplos](https://github.com/msfidelis/cncf-platform-stack/tree/cap08_front_proxy)
 
 ## Stack
 
@@ -65,8 +65,9 @@
 * [Certbot](https://certbot.eff.org/docs/)
 * [Docs Clair](https://github.com/quay/clair/tree/master/Documentation)
 * [Algoritmos de Load Balancing do Envoy](https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/upstream/load_balancing/load_balancers)
+* [Repositório com exemplos de uso do Envoy](https://github.com/msfidelis/envoy-proxy-examples) 
 
-## Microserviços utilizados na aula pra testes 
+## Microserviços utilizados na aula pra testes
 
 * [Whois Microservice](https://github.com/msfidelis/microservice-nadave-whois)
 * [Faker Person Generator Microservice](https://github.com/msfidelis/microservice-nadave-fake-person)
